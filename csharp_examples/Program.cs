@@ -84,10 +84,10 @@ namespace Csharp_examples
         {
             ListRepositories();
             Console.Write("Write the name of the repository to delete: ");
-            string name = Console.ReadLine();
+            string repository = Console.ReadLine();
 
-            ApiUtils.DeleteRepository(name).Wait();
-            Console.Write(string.Format("Repository {0} successfully deleted!", name));
+            ApiUtils.DeleteRepository(repository).Wait();
+            Console.Write(string.Format("Repository {0} successfully deleted!", repository));
         }
 
         static string mActions = @"1 - List repositories (cm lrep)
