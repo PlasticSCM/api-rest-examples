@@ -2,13 +2,14 @@ import sys
 import requests
 
 __api_url = "http://localhost:9090/api/v1"
+headers = {'Content-type': 'application/json'}
 
 
 def create_repository(name, server):
     url = __api_url + "/repos"
     params = {"name": name,
               "server": server}
-    req = requests.post(url, params)
+    req = requests.post(url,json=params, headers=headers)
     if req.status_code is not 200:
         print("The repository could not be created", file=sys.stderr)
         exit(-1)
